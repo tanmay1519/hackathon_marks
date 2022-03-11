@@ -1,0 +1,39 @@
+<div>
+    <div class="box">
+    <h2>Results Page</h2>
+</div>
+    <h4>Enter your Roll Number</h4>
+    <input #roll type ="number" (change)="updateval(roll.value)"  >
+    <button (click)="getResult()">Get Result</button>
+
+    <div *ngIf="result">
+        <h1>Result</h1>
+        <h2>Name:{{result.name}}</h2>
+        <h3>MCQ - {{result.mcq}}</h3>
+        <h3>Non MCQ - {{result.nmcq}}</h3>
+    </div>
+<button (click)="getData()">
+    Get Student Data Ascending
+</button>
+<button (click)="getDatadesc()">
+    Get Student Data Descending
+</button>
+<div *ngIf="Data">
+    <div  class="box" >
+        <p class="ibox">Roll No</p> 
+      <p class="ibox">Name</p>  
+      <p class="ibox">Mcq Marks</p> 
+      <p class="ibox">NMcq Marks</p> 
+    </div>
+    <div *ngFor="let dataline of Data" class="box" >
+        <p class="ibox">{{(dataline.rollno)}}</p> 
+      <p class="ibox">{{dataline.name}}</p>  
+      <p class="ibox">{{(dataline.mcq)}}</p> 
+      <p class="ibox">{{(dataline.nmcq)}}</p> 
+    </div>
+    
+</div>
+
+    </div>
+
+
